@@ -23,5 +23,6 @@ __pypackages__/
 
 *.xlsx
 *.csv
-*.txt
+#*.txt
 *.png
+*.gitignore
