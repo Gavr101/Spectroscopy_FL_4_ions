@@ -3,6 +3,7 @@ import os, sys
 import numpy as np
 import json
 from tqdm import tqdm
+from copy import deepcopy
 
 import matplotlib.pyplot as plt
 import plotly.express as px
@@ -59,7 +60,7 @@ def plotly_multi_scatter(mult_x_y,
     # Iterating through (x, y) pairs
     for i, (x, y) in enumerate(mult_x_y):
         #fig = px.scatter(x=x, y=y)
-        print(x[:5], y[:5])
+        #print(x[:5], y[:5])
         fig.add_trace(go.Scatter(x = x, y = y,
                                  name = names[i]))
 
@@ -161,27 +162,18 @@ class KAN_es(KAN):
                 results['reg'], 1D array of regularization
         '''
 
-        class HiddenPrints:
-            ''' Class to avoid unwanted printing'''
-            def __enter__(self):
-                self._original_stdout = sys.stdout
-                sys.stdout = open(os.devnull, 'w')
-
-            def __exit__(self, exc_type, exc_val, exc_tb):
-                sys.stdout.close()
-                sys.stdout = self._original_stdout
-
 
         # Early stopping stuff preparation
         no_fit_change_steps = 0
         best_val_rmse = np.inf
-        s_ckpt = 'tmp_ckpt'
-        #best_model = copy.copy(self)
+        # Remembering first model
+        best_model_dict = deepcopy(self.state_dict())
 
         def reg(acts_scale):
 
             def nonlinear(x, th=small_mag_threshold, factor=small_reg_factor):
                 return (x < th) * x * factor + (x > th) * (x + (factor - 1) * th)
+
 
             reg_ = 0.
             for i in range(len(acts_scale)):
@@ -289,10 +281,10 @@ class KAN_es(KAN):
                 no_fit_change_steps = 0
 
             if val_rmse < best_val_rmse:
-                # remembering best_val_fit and best_model
+                # Remembering best_val_fit and best_model
                 best_val_rmse = val_rmse
-                with HiddenPrints():
-                    self.save_ckpt(s_ckpt)
+                best_model_dict = deepcopy(self.state_dict())
+
 
             if _ % log == 0:
                 pbar.set_description("trn_ls: %.2e | vl_ls: %.2e | e_stop: %d/%d | tst_ls: %.2e | reg: %.2e " % (
@@ -322,9 +314,10 @@ class KAN_es(KAN):
                 print(f'Early stopping criteria raised')
                 break
         
-        # load best model
-        self.load_ckpt(s_ckpt)
+        # Load best model
+        self.load_state_dict(best_model_dict)
         self(dataset['train_input'])
-        self.clear_ckpts()
+        val_loss = loss_fn_eval(self.forward(dataset['val_input'][val_id].to(device)), dataset['val_label'][val_id].to(device))
+        val_rmse = torch.sqrt(val_loss).cpu().detach().numpy()
 
         return results

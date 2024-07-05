@@ -10,11 +10,12 @@
     "RANDOM_STATE_SPLIT": 42,
     "N_ITER_NO_CHANGE": 500,
     
-    "HIDDEN_LAYER_SIZES": 500,
+    "HIDDEN_LAYER_SIZES": 64,
     "RANDOM_STATE_TRAIN": 42,
     "ACTIVATION": "tanh",
     "SOLVER": "adam",
     "EARLY_STOPPING": true,
     "N_ITER_NO_CHANGE": 100,
-    "MAX_ITER": 1000
+    "MAX_ITER": 10000,
+    "TOL": 0.001
 }

@@ -49,9 +49,7 @@ def get_y(l_ions, spec_file):
     """Forms and returns data of ions concentration - y data.
     """
     df = pd.read_excel(spec_file + f'/Y_answers.xlsx', index_col=0)
-    if isinstance(l_ions, list):
-        y = df[l_ions].to_numpy(dtype=np.float64).ravel()
-    else:
-        y = df[l_ions]
+
+    y = df[l_ions].to_numpy(dtype=np.float64).ravel()
 
     return y
