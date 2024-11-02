@@ -5,12 +5,14 @@ Statement of the inverse problem: to determine the concentration of metal ions i
 
 The spectrum was represented in compressed (5 input values) and full representations (500 input values).
 
-![](/pictures/pic1.png)
+![pic1](/pictures/pic1.png)
+
 *Left: two-dimensional excitation-emission matrix of a CD aqueous suspension in the presence of heavy metal ions. 
 Right: one-dimensional fluorescence spectrum at 350 nm excitation and its parameterization using 5 parameters.*
 
 The machine learning models used were Kolmogorov-Arnold networks (KAN), random forests (RF), gradient boosting (GB), and a perceptron with one hidden layer (MLP). The results are presented in bar plots:
-![](/pictures/pic2.png)
+
+![pic2](/pictures/pic2.png)
 
 *Mean absolute error in determining ion concentrations by four methods based on compressed representation (left) and full spectrum representation (right).*
 
@@ -25,17 +27,17 @@ In terms of predictive capability, KAN performed no worse than the reference met
 
 ### *1. Training KAN with B-splines as activation functions.*
 
-![](/pictures/gif1.gif)
+![gif1](/pictures/gif1.gif)
 
 ### *2. Approximating KAN activation functions with our chosen set of analytical functions. Fine-tuning.*
 
-![](/pictures/gif2.gif)
+![gif2](/pictures/gif2.gif)
 
 ### *3. Visual and formulaic representation of the KAN model after training.*
 
-![](/pictures/pic3.png)
+![pic3](/pictures/pic3.png)
 
-![](/pictures/pic4.png)
+![pic4](/pictures/pic4.png)
 
 ---
 # Description of the purpose of the files in this project
