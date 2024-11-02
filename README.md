@@ -5,14 +5,14 @@ Statement of the inverse problem: to determine the concentration of metal ions i
 
 The spectrum was represented in compressed (5 input values) and full representations (500 input values).
 
-![pic1](/Pictures/pic1.png)
+![pic1](/Pictures/Pic1.png)
 
 *Left: two-dimensional excitation-emission matrix of a CD aqueous suspension in the presence of heavy metal ions. 
 Right: one-dimensional fluorescence spectrum at 350 nm excitation and its parameterization using 5 parameters.*
 
 The machine learning models used were Kolmogorov-Arnold networks (KAN), random forests (RF), gradient boosting (GB), and a perceptron with one hidden layer (MLP). The results are presented in bar plots:
 
-![pic2](/Pictures/pic2.png)
+![pic2](/Pictures/Pic2.png)
 
 *Mean absolute error in determining ion concentrations by four methods based on compressed representation (left) and full spectrum representation (right).*
 
