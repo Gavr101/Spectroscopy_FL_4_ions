@@ -1,6 +1,8 @@
 # General Description
 This project presents the software code for applying Kolmogorov-Arnold networks (KAN) to the inverse problem of spectroscopy, as described in the article "Solution of an inverse problem of spectroscopy using Kolmogorov-Arnold networks." (http://dx.doi.org/).
 
+Apart from that, here introduced enhanced version of plotting KAN (see below).
+
 Statement of the inverse problem: to determine the concentration of metal ions in a solution based on the fluorescence spectrum.
 
 The spectrum was represented in compressed (5 input values) and full representations (500 input values).
@@ -37,9 +39,11 @@ In terms of predictive capability, KAN performed no worse than the reference met
 
 ![pic4](/Pictures/pic4.png)
 
+### *4. Enhanced visualisation of KAN model.*
+
+![pic5](/Pictures/pic5.png)
 ---
 # Description of the purpose of the files in this project
-The implementation does not use third-party packages. 
 Directory hierarchy: 
 
 0) Auxiliary code:
@@ -48,15 +52,20 @@ Directory hierarchy:
     * tools.py - 
         1. functions for working with JSON files; 
         2. functions for compressing input spectra;
-        3. definition of class KAN_es(KAN) - KAN with early stopping based on the validation set.
+        3. definition of class KAN_es(KAN) - KAN with early stopping based on the validation set. Saved here as legacy, which was used for gaining publicated materials. We recommend use KAN_es_2 class instead.
+        4. definition of class KAN_es_2(KAN) - KAN with early stopping based on the validation set and enhanced plotting techniqe.
 
 1) Code demonstrating the operation of several stages of the project:
     * Full_input.ipynb - Training a perceptron and KAN on full spectra as input (500 values).
     * Squeezed_input.ipynb - Compression (parameterization) of input spectra to 5 values. Training a perceptron and KAN on compressed spectra.
     * Mult_exper.ipynb - example of multiple runs of RF, GB, MLP, and KAN models to identify a single metal ion with a set of statistics.
+    * Interp_squeezed_input.ipynb - investigating interpretation capabilities of defolt KAN plotting.
+    * Interp_squeezed_input_2.ipynb - repeats after Interp_squeezed_input.ipynb, but with enhanced plotting of KAN.
 
 2) Running the code from Mult_exper.ipynb for different ions.
     * Mult_exper_Cr.ipynb
+    * Mult_exper_Cu.ipynb
     * Mult_exper_Ni.ipynb
     * Mult_exper_NO3.ipynb
+    
 ---

@@ -22,6 +22,8 @@ __pycache__/
 __pypackages__/
 figures/
 in_vars/
+for_NI_24_presentation/
+model/
 *.xlsx
 *.csv
 #*.txt
