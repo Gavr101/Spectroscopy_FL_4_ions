@@ -1,5 +1,5 @@
 # General Description
-This project presents the software code for applying Kolmogorov-Arnold networks (KAN) to the inverse problem of spectroscopy, as described in the article "Solution of an inverse problem of spectroscopy using Kolmogorov-Arnold networks." (http://dx.doi.org/).
+This project presents the software code for applying Kolmogorov-Arnold networks (KAN) to the inverse problem of spectroscopy, as described in the article "Solution of an inverse problem of spectroscopy using Kolmogorov-Arnold networks." (https://doi.org/10.3103/S1060992X24700747).
 
 Apart from that, here introduced enhanced version of plotting KAN (see below).
 
@@ -46,26 +46,21 @@ In terms of predictive capability, KAN performed no worse than the reference met
 # Description of the purpose of the files in this project
 Directory hierarchy: 
 
-0) Auxiliary code:
-    * json_config.txt - configuration file with hyperparameters of the models.
+
+1) Main_experiment: code implementing the training and validation of KAN and reference methods:
+    * Squeezed_input.ipynb - Compression (parameterization) of input spectra up to 5 values. Perceptron and KAN training on compressed spectra.
+    * Mult_exper_Cr/Cu/Ni/NO3.ipynb - Launch of RF, GB, MLP and KAN models to determine the metal ion Cr/Cu/Ni/NO3 while maintaining statistics.
+
+
+2) Interpretability: the study of the interpretation of KAN in solving the inverse problem of spectroscopy.
+    * Interp_squeezed_input.ipynb - a study of the interpretative capabilities of improved KAN visualization.
+    * Interp_squeezed_input_lmd.ipynb - exploring the interpretative capabilities of $\lambda$-KAN.
+
+3) Вспомогательный код:
+    * json_config.txt - configuration files with hyper parameters of models..
     * raw_data_processing.py - functions for loading fluorescence maps.
     * tools.py - 
         1. functions for working with JSON files; 
         2. functions for compressing input spectra;
         3. definition of class KAN_es(KAN) - KAN with early stopping based on the validation set. Saved here as legacy, which was used for gaining publicated materials. We recommend use KAN_es_2 class instead.
         4. definition of class KAN_es_2(KAN) - KAN with early stopping based on the validation set and enhanced plotting techniqe.
-
-1) Code demonstrating the operation of several stages of the project:
-    * Full_input.ipynb - Training a perceptron and KAN on full spectra as input (500 values).
-    * Squeezed_input.ipynb - Compression (parameterization) of input spectra to 5 values. Training a perceptron and KAN on compressed spectra.
-    * Mult_exper.ipynb - example of multiple runs of RF, GB, MLP, and KAN models to identify a single metal ion with a set of statistics.
-    * Interp_squeezed_input.ipynb - investigating interpretation capabilities of defolt KAN plotting.
-    * Interp_squeezed_input_2.ipynb - repeats after Interp_squeezed_input.ipynb, but with enhanced plotting of KAN.
-
-2) Running the code from Mult_exper.ipynb for different ions.
-    * Mult_exper_Cr.ipynb
-    * Mult_exper_Cu.ipynb
-    * Mult_exper_Ni.ipynb
-    * Mult_exper_NO3.ipynb
-    
----
