@@ -60,7 +60,7 @@
     * Interp_squeezed_input_lmd.ipynb - исследование интерпретационных возможностей $\lambda$-СКА.
 
 
-3) Вспомогательный код:
+3) Auxiliary code:
     * json_config.txt - конфигурационные файлы с гипперпараметрами моделей.
     * raw_data_processing.py - функции для загрузки карт флуорисценции.
     * tools.py - 
