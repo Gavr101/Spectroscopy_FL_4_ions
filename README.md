@@ -1,5 +1,12 @@
+# Enhanced KAN visualisation for better interpretation
+
+![pic0](/Pictures/Pic6.png)
+*Left: visualization of KAN, proposed by Liu et al.*
+
+*Right: Improved visualization of KAN with data distributions histograms of activation functions and coloring them in accordance with the reper channel.*
+
 # General Description
-This project presents the software code for applying Kolmogorov-Arnold networks (KAN) to the inverse problem of spectroscopy, as described in the article "Solution of an inverse problem of spectroscopy using Kolmogorov-Arnold networks." (https://doi.org/10.3103/S1060992X24700747).
+This project presents the software code for applying Kolmogorov-Arnold networks (KAN) to the inverse problem of spectroscopy. The results are partially described in the article "Solution of an inverse problem of spectroscopy using Kolmogorov-Arnold networks." (https://doi.org/10.3103/S1060992X24700747).
 
 Apart from that, here introduced enhanced version of plotting KAN (see below).
 
@@ -43,20 +50,19 @@ In terms of predictive capability, KAN performed no worse than the reference met
 
 ![pic5](/Pictures/pic5.png)
 ---
-# Description of the purpose of the files in this project
-Directory hierarchy: 
+# Code files
 
 
-1) Main_experiment: code implementing the training and validation of KAN and reference methods:
+1) _Main_experiment_/ : code implementing the training and validation of KAN and reference methods:
     * Squeezed_input.ipynb - Compression (parameterization) of input spectra up to 5 values. Perceptron and KAN training on compressed spectra.
     * Mult_exper_Cr/Cu/Ni/NO3.ipynb - Launch of RF, GB, MLP and KAN models to determine the metal ion Cr/Cu/Ni/NO3 while maintaining statistics.
 
 
-2) Interpretability: the study of the interpretation of KAN in solving the inverse problem of spectroscopy.
+2) _Interpretability_/ : the study of the interpretation of KAN in solving the inverse problem of spectroscopy.
     * Interp_squeezed_input.ipynb - a study of the interpretative capabilities of improved KAN visualization.
     * Interp_squeezed_input_lmd.ipynb - exploring the interpretative capabilities of $\lambda$-KAN.
 
-3) Вспомогательный код:
+3) Supportive code:
     * json_config.txt - configuration files with hyper parameters of models..
     * raw_data_processing.py - functions for loading fluorescence maps.
     * tools.py - 
@@ -64,3 +70,4 @@ Directory hierarchy:
         2. functions for compressing input spectra;
         3. definition of class KAN_es(KAN) - KAN with early stopping based on the validation set. Saved here as legacy, which was used for gaining publicated materials. We recommend use KAN_es_2 class instead.
         4. definition of class KAN_es_2(KAN) - KAN with early stopping based on the validation set and enhanced plotting techniqe.
+---
