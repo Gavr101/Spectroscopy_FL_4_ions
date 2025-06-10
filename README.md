@@ -1,6 +1,6 @@
 # Enhanced KAN visualisation for better interpretation
 
-![pic0](/Pictures/Pic6.png)
+![pic0](/Pictures/pic6.png)
 *Left: visualization of KAN, proposed by Liu et al.*
 
 *Right: Improved visualization of KAN with data distributions histograms of activation functions and coloring them in accordance with the reper channel.*
