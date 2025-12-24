@@ -8,7 +8,7 @@
 # $\lambda$-KAN with an architecturally integrated interpretation mechanism
 
 ![pic00](/Pictures/pic7.png)
-_Graphic representation of KAN (left) and its modification $\lambda$-KAN (right)._
+_Graphic representation of KAN (left) and its modification $$\lambda$$-KAN (right)._
 
 
 # General Description
