@@ -8,7 +8,7 @@
 # $\lambda$-KAN with an architecturally integrated interpretation mechanism
 
 ![pic00](/Pictures/pic7.png)
-_Graphic representation of KAN (left) and its modification $$\lambda$$-KAN (right)._
+*Graphic representation of KAN (left) and its modification λ-KAN (right).*
 
 
 # General Description
@@ -65,9 +65,9 @@ $$f(x_{1},\cdot\cdot\cdot, x_{n})=\sum_{q=1}^{2n+1}\Phi_{q}(\sum_{p=1}^{n}\lambd
 This modification of KAN allows treat $\lambda_{p}$ coefficients as measure of sensitivity model to $x_{p}$ inputs.
 
 ![pic6](/Pictures/pic8.png)
-_Results of training and analysis of $\lambda$-KAN for $Cr^{3+}$ ion._
+_Results of training and analysis of λ-KAN for $Cr^{3+}$ ion._
 
-___Top left corner:__ paired plots of true and estimated ion concentrations; __Top right corner:__ histogram of distribution of the cosine metric between the $\lambda$-coefficients vector and the true gradient vector of the model prediction by input channels. __Bottom half:__ three histograms assessing the importance of input features by the methods of SHAP analysis, gradient analysis, and $\lambda$-coefficient analysis, respectively._
+*__Top left corner:__ paired plots of true and estimated ion concentrations; __Top right corner:__ histogram of distribution of the cosine metric between the λ-coefficients vector and the true gradient vector of the model prediction by input channels. __Bottom half:__ three histograms assessing the importance of input features by the methods of SHAP analysis, gradient analysis, and λ-coefficient analysis, respectively.*
 
 The graphs of the input features importance obtained by Shapley and gradient analyses correlate with the $\lambda$-vectors.
 The histogram of the distribution of the cosine measure is concentrated at values of ±1, which also confirms the correctness of the interpretation of $\lambda$-KAN using $\lambda$-coefficients.
