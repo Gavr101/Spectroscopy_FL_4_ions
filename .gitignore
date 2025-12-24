@@ -24,6 +24,7 @@ figures/
 in_vars/
 for_NI_24_presentation/
 model/
+full_data/NI_fig.ipynb
 *.xlsx
 *.csv
 #*.txt

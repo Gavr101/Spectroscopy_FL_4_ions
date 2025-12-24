@@ -5,10 +5,16 @@
 
 *Right: Improved visualization of KAN with data distributions histograms of activation functions and coloring them in accordance with the reper channel.*
 
-# General Description
-This project presents the software code for applying Kolmogorov-Arnold networks (KAN) to the inverse problem of spectroscopy. The results are partially described in the article "Solution of an inverse problem of spectroscopy using Kolmogorov-Arnold networks." (https://doi.org/10.3103/S1060992X24700747).
+# $\lambda$-KAN with an architecturally integrated interpretation mechanism
 
-Apart from that, here introduced enhanced version of plotting KAN (see below).
+![pic00](/Pictures/pic7.png)
+*Graphic representation of KAN (left) and its modification $\lambda$-KAN (right).*
+
+
+# General Description
+This project presents the software code for applying Kolmogorov-Arnold networks (KAN) to the inverse problem of spectroscopy. The results are described in the articles:
+* Kupriyanov, G. A., et al. (2024). Solution of an inverse problem of spectroscopy using Kolmogorov-Arnold networks. *Optical Memory and Neural Networks*. https://doi.org/10.3103/S1060992X24700747
+* Kupriyanov, G. A., et al. (2025). Interpretation of Kolmogorov–Arnold Networks Using the Example of Solving the Inverse Problem of Photoluminescence Spectroscopy. *Optical Memory and Neural Networks*. https://doi.org/10.3103/S1060992X25602052
 
 Statement of the inverse problem: to determine the concentration of metal ions in a solution based on the fluorescence spectrum.
 
@@ -49,20 +55,37 @@ In terms of predictive capability, KAN performed no worse than the reference met
 ### *4. Enhanced visualisation of KAN model.*
 
 ![pic5](/Pictures/pic5.png)
+
+## $\lambda$-KAN with an architecturally integrated interpretation mechanism
+
+$\lambda$-KAN is modification of KAN, based on Kahane`s version of Kolmogorov-Arnold theorem:
+
+$$f(x_{1},\cdot\cdot\cdot, x_{n})=\sum_{q=1}^{2n+1}\Phi_{q}(\sum_{p=1}^{n}\lambda_{p}\cdot\varphi_{q}(x_{p}))$$
+
+This modification of KAN allows treat $\lambda_{p}$ coefficients as measure of sensitivity model to $x_{p}$ inputs.
+
+![pic6](/Pictures/pic8.png)
+*Results of training and analysis of λ-KAN for $Cr^{3+}$ ion.* 
+
+*__Top left corner:__ paired plots of true and estimated ion concentrations; __Top right corner:__ histogram of distribution of the cosine metric between the $\lambda$-coefficients vector and the true gradient vector of the model prediction by input channels. __Bottom half:__ three histograms assessing the importance of input features by the methods of SHAP analysis, gradient analysis, and $\lambda$-coefficient analysis, respectively.*
+
+The graphs of the input features importance obtained by Shapley and gradient analyses correlate with the $\lambda$-vectors.
+The histogram of the distribution of the cosine measure is concentrated at values of ±1, which also confirms the correctness of the interpretation of $\lambda$-KAN using $\lambda$-coefficients.
+
 ---
 # Code files
 
 
-1) _Main_experiment_/ : code implementing the training and validation of KAN and reference methods:
+1) _Main_experiment_ : code implementing the training and validation of KAN and reference methods:
     * Squeezed_input.ipynb - Compression (parameterization) of input spectra up to 5 values. Perceptron and KAN training on compressed spectra.
     * Mult_exper_Cr/Cu/Ni/NO3.ipynb - Launch of RF, GB, MLP and KAN models to determine the metal ion Cr/Cu/Ni/NO3 while maintaining statistics.
 
 
-2) _Interpretability_/ : the study of the interpretation of KAN in solving the inverse problem of spectroscopy.
+2) _Interpretability_ : the study of the interpretation of KAN in solving the inverse problem of spectroscopy.
     * Interp_squeezed_input.ipynb - a study of the interpretative capabilities of improved KAN visualization.
     * Interp_squeezed_input_lmd.ipynb - exploring the interpretative capabilities of $\lambda$-KAN.
 
-3) Supportive code:
+3) _Supportive code_:
     * json_config.txt - configuration files with hyper parameters of models..
     * raw_data_processing.py - functions for loading fluorescence maps.
     * tools.py - 
