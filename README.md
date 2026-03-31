@@ -13,8 +13,8 @@
 
 # General Description
 This project presents the software code for applying Kolmogorov-Arnold networks (KAN) to the inverse problem of spectroscopy. The results are described in the articles:
-* Kupriyanov, G. A., et al. (2024). Solution of an inverse problem of spectroscopy using Kolmogorov-Arnold networks. *Optical Memory and Neural Networks*. https://doi.org/10.3103/S1060992X24700747
 * Kupriyanov, G. A., et al. (2025). Interpretation of Kolmogorov–Arnold Networks Using the Example of Solving the Inverse Problem of Photoluminescence Spectroscopy. *Optical Memory and Neural Networks*. https://doi.org/10.3103/S1060992X25602052
+* Kupriyanov, G. A., et al. (2024). Solution of an inverse problem of spectroscopy using Kolmogorov-Arnold networks. *Optical Memory and Neural Networks*. https://doi.org/10.3103/S1060992X24700747
 
 Statement of the inverse problem: to determine the concentration of metal ions in a solution based on the fluorescence spectrum.
 
@@ -83,8 +83,10 @@ The histogram of the distribution of the cosine measure is concentrated at value
 
 
 2) _Interpretability_ : the study of the interpretation of KAN in solving the inverse problem of spectroscopy.
+    * Accuracy_squeezed_input.ipynb - determining accuracies of KAN, $\lambda$-KAN and other models.
     * Interp_squeezed_input.ipynb - a study of the interpretative capabilities of improved KAN visualization.
     * Interp_squeezed_input_lmd.ipynb - exploring the interpretative capabilities of $\lambda$-KAN.
+    * KAN__lmd_KAN_interp_compar.ipynb - comparing results of $\lambda$-KANs' and KANs' interpretations. 
 
 3) _Supportive code_:
     * json_config.txt - configuration files with hyper parameters of models..
@@ -94,4 +96,5 @@ The histogram of the distribution of the cosine measure is concentrated at value
         2. functions for compressing input spectra;
         3. definition of class KAN_es(KAN) - KAN with early stopping based on the validation set. Saved here as legacy, which was used for gaining publicated materials. We recommend use KAN_es_2 class instead.
         4. definition of class KAN_es_2(KAN) - KAN with early stopping based on the validation set and enhanced plotting techniqe.
+        5. definition of class tlmdKAN(KAN) - realisation of $\lambda$-KAN.
 ---

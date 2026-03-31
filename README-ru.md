@@ -13,8 +13,8 @@
 
 # Общее описание 
 В данном проекте представлен программный код по применению сетей Колмогорова-Арнольда (СКА) к обратной задачи спектроскопии. Данные результаты описанны в статьях: 
-* Kupriyanov, G. A., et al. (2024). Solution of an inverse problem of spectroscopy using Kolmogorov-Arnold networks. *Optical Memory and Neural Networks*. https://doi.org/10.3103/S1060992X24700747
 * Kupriyanov, G. A., et al. (2025). Interpretation of Kolmogorov–Arnold Networks Using the Example of Solving the Inverse Problem of Photoluminescence Spectroscopy. *Optical Memory and Neural Networks*. https://doi.org/10.3103/S1060992X25602052
+* Kupriyanov, G. A., et al. (2024). Solution of an inverse problem of spectroscopy using Kolmogorov-Arnold networks. *Optical Memory and Neural Networks*. https://doi.org/10.3103/S1060992X24700747
 
 
 Постановка обратной задачи: по спектру флуоресценции определить концентрацию ионов металлов в растворе.
@@ -87,8 +87,10 @@ $$f(x_{1},\cdot\cdot\cdot, x_{n})=\sum_{q=1}^{2n+1}\Phi_{q}(\sum_{p=1}^{n}\lambd
 
 
 2) *Interpretability* : исследование интерпретации СКА при решении обратной задачи спектроскопии.
+    * Accuracy_squeezed_input.ipynb - применение СКА, $\lambda$-СКА и других моделей к задаче и определение метрик.
     * Interp_squeezed_input.ipynb - исследование интерпретационных возможностей улучшенной визуализации СКА.
     * Interp_squeezed_input_lmd.ipynb - исследование интерпретационных возможностей $\lambda$-СКА.
+    * KAN__lmd_KAN_interp_compar.ipynb - сравнение результатов интерпретации $\lambda$-СКА и СКА. 
 
 
 3) *Вспомогательный код*:
@@ -99,5 +101,6 @@ $$f(x_{1},\cdot\cdot\cdot, x_{n})=\sum_{q=1}^{2n+1}\Phi_{q}(\sum_{p=1}^{n}\lambd
         2. функции для сжатия входных спектров;
         3. определение class KAN_es(KAN) - СКА с предварительной остановкой обучения по валидационному набору. Оставлено здесь как легаси-код, который был использован для получения публикационных материалов. Мы рекомендуем использовать класс KAN_es_2.
         4. определение class KAN_es_2(KAN) - СКА с предварительной остановкой обучения по валидационному набору и продвинутой техникой визуализации.
+        5. Определение класса tlmdKAN(KAN) - реализация $\lambda$-СКА.
 
 ---
