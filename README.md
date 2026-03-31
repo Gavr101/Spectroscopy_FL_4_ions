@@ -108,4 +108,5 @@ Or open colab version: https://colab.research.google.com/github/Gavr101/Spectros
         3. definition of class KAN_es(KAN) - KAN with early stopping based on the validation set. Saved here as legacy, which was used for gaining publicated materials. We recommend use KAN_es_2 class instead
         4. definition of class KAN_es_2(KAN) - KAN with early stopping based on the validation set and enhanced plotting techniqe
         5. definition of class tlmdKAN(KAN) - realisation of $\lambda$-KAN
+    * data_example - fragment of full dataset. Aimed to be used in demo notebooks
 ---
