@@ -75,8 +75,12 @@ The histogram of the distribution of the cosine measure is concentrated at value
 
 ---
 # Demo
-You can easily check KAN and $\lambda$-KAN application and interpretation on data fragment in Interpretability/Demo.ipynb. 
+[![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/Gavr101/Spectroscopy_FL_4_ions/blob/main/Interpretability/Demo_colab.ipynb)
+
+You can easily check KAN and $\lambda$-KAN application and interpretation on data fragment in __Interpretability/Demo.ipynb__. 
 Just clone this repo and run all cells in this notebook.
+
+Or open colab version: https://colab.research.google.com/github/Gavr101/Spectroscopy_FL_4_ions/blob/main/Interpretability/Demo_colab.ipynb
 
 
 ---
@@ -84,23 +88,24 @@ Just clone this repo and run all cells in this notebook.
 
 
 1) _Main_experiment_ : code implementing the training and validation of KAN and reference methods:
-    * Squeezed_input.ipynb - Compression (parameterization) of input spectra up to 5 values. Perceptron and KAN training on compressed spectra.
-    * Mult_exper_Cr/Cu/Ni/NO3.ipynb - Launch of RF, GB, MLP and KAN models to determine the metal ion Cr/Cu/Ni/NO3 while maintaining statistics.
+    * Squeezed_input.ipynb - Compression (parameterization) of input spectra up to 5 values. Perceptron and KAN training on compressed spectra
+    * Mult_exper_Cr/Cu/Ni/NO3.ipynb - Launch of RF, GB, MLP and KAN models to determine the metal ion Cr/Cu/Ni/NO3 while maintaining statistics
 
 
 2) _Interpretability_ : the study of the interpretation of KAN in solving the inverse problem of spectroscopy.
-    * Accuracy_squeezed_input.ipynb - determining accuracies of KAN, $\lambda$-KAN and other models.
-    * Interp_squeezed_input.ipynb - a study of the interpretative capabilities of improved KAN visualization.
-    * Interp_squeezed_input_lmd.ipynb - exploring the interpretative capabilities of $\lambda$-KAN.
-    * KAN__lmd_KAN_interp_compar.ipynb - comparing results of $\lambda$-KANs' and KANs' interpretations. 
+    * Accuracy_squeezed_input.ipynb - determining accuracies of KAN, $\lambda$-KAN and other models
+    * Interp_squeezed_input.ipynb - a study of the interpretative capabilities of improved KAN visualization
+    * Interp_squeezed_input_lmd.ipynb - exploring the interpretative capabilities of $\lambda$-KAN
+    * KAN__lmd_KAN_interp_compar.ipynb - comparing results of $\lambda$-KANs' and KANs' interpretations
+    * Demo/Demo_colab.ipynb - demonstration of KAN / $\lambda$-KAN capabilities
 
 3) _Supportive code_:
-    * json_config.txt - configuration files with hyper parameters of models..
-    * raw_data_processing.py - functions for loading fluorescence maps.
+    * json_config.txt - configuration files with hyper parameters of models
+    * raw_data_processing.py - functions for loading fluorescence maps
     * tools.py - 
-        1. functions for working with JSON files; 
-        2. functions for compressing input spectra;
-        3. definition of class KAN_es(KAN) - KAN with early stopping based on the validation set. Saved here as legacy, which was used for gaining publicated materials. We recommend use KAN_es_2 class instead.
-        4. definition of class KAN_es_2(KAN) - KAN with early stopping based on the validation set and enhanced plotting techniqe.
-        5. definition of class tlmdKAN(KAN) - realisation of $\lambda$-KAN.
+        1. functions for working with JSON files
+        2. functions for compressing input spectra
+        3. definition of class KAN_es(KAN) - KAN with early stopping based on the validation set. Saved here as legacy, which was used for gaining publicated materials. We recommend use KAN_es_2 class instead
+        4. definition of class KAN_es_2(KAN) - KAN with early stopping based on the validation set and enhanced plotting techniqe
+        5. definition of class tlmdKAN(KAN) - realisation of $\lambda$-KAN
 ---
