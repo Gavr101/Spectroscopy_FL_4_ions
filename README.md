@@ -74,6 +74,12 @@ The histogram of the distribution of the cosine measure is concentrated at value
 
 
 ---
+# Demo
+You can easily check KAN and $\lambda$-KAN application and interpretation on data fragment in Interpretability/Demo.ipynb. 
+Just clone this repo and run all cells in this notebook.
+
+
+---
 # Code files
 
 

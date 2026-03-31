@@ -23,10 +23,15 @@ __pypackages__/
 figures/
 in_vars/
 for_NI_24_presentation/
+Interpretability/Accuracy_metrics.xlsx
+Interpretability/aggr_Accuracy_metrics.xlsx
+Параметры моделей.xlsx
+
 model/
-full_data/NI_fig.ipynb
-*.xlsx
-*.csv
+full_data/
+
+.csv
+#*.xlsx
 #*.txt
 #*.png
 *.gitignore
